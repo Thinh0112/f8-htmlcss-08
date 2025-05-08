@@ -9,12 +9,12 @@
   background: var(--header-bg-color);
   padding: 30px 0;
 
-  @include abstracts.breakpoint(lg) {
+  @include abstracts.screen(lg) {
     background-color: var(--header-bg-color);
     box-shadow: 0px 20px 60px 10px var(--header-box-shadow-color);
   }
 
-  @include abstracts.breakpoint(sm) {
+  @include abstracts.screen(sm) {
     padding: 16px 0;
   }
 }
@@ -22,12 +22,13 @@
 .top-bar {
   @extend %flexItemsCenter;
   position: relative;
+  z-index: 1;
 
-  @include abstracts.breakpoint(lg) {
+  @include abstracts.screen(lg) {
     justify-content: space-between;
   }
 
-  @include abstracts.breakpoint(sm) {
+  @include abstracts.screen(sm) {
     margin: 0 16px;
   }
 }
@@ -35,11 +36,11 @@
 .navbar {
   margin-left: 129px;
 
-  @include abstracts.breakpoint(xl) {
+  @include abstracts.screen(xl) {
     margin-left: 28px;
   }
 
-  @include abstracts.breakpoint(lg) {
+  @include abstracts.screen(lg) {
     position: fixed;
     inset: 0 50% 0 0;
     z-index: 9;
@@ -61,7 +62,7 @@
     }
   }
 
-  @include abstracts.breakpoint(sm) {
+  @include abstracts.screen(sm) {
     inset: 0 20% 0 0;
     color: var(--top-menu-color);
   }
@@ -69,12 +70,12 @@
   &__close-btn {
     display: none;
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
       display: block;
       padding: 10px 40px;
     }
 
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.screen(sm) {
       padding: 0 20px 10px;
     }
   }
@@ -83,7 +84,7 @@
     visibility: hidden;
     opacity: 0;
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
       position: fixed;
       inset: 0;
       z-index: 8;
@@ -101,7 +102,7 @@
   &__list {
     @extend %flexItemsCenter;
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
       flex-direction: column;
       align-items: flex-start;
 
@@ -110,7 +111,7 @@
       height: calc(100% - 40px);
     }
 
-    @include abstracts.breakpoint(md) {
+    @include abstracts.screen(md) {
       height: calc(100% - 140px);
     }
   }
@@ -119,12 +120,12 @@
     padding: 0 15px;
     cursor: pointer;
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
       padding: 0 40px;
       width: 100%;
     }
 
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.screen(sm) {
       padding: 0 20px;
     }
 
@@ -132,7 +133,7 @@
       display: block;
     }
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
       width: 100%;
 
       &:hover .dropdown {
@@ -157,7 +158,7 @@
     font-weight: 500;
     line-height: 146.667%;
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
       justify-content: space-between;
     }
   }
@@ -165,7 +166,7 @@
   &__arrow {
     margin-top: 3px;
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
       rotate: -90deg;
       transition: rotate 0.3s;
     }
@@ -177,7 +178,7 @@
   @extend %flexItemsCenter;
   gap: 20px;
 
-  @include abstracts.breakpoint(lg) {
+  @include abstracts.screen(lg) {
     margin-left: 0;
   }
 
@@ -191,7 +192,7 @@
   &__group--single &__btn {
     padding: 13px;
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
       display: none;
     }
   }
@@ -235,7 +236,7 @@
   align-items: center;
   height: 50px;
 
-  @include abstracts.breakpoint(md) {
+  @include abstracts.screen(md) {
     padding: 0 40px;
 
     &__title {
@@ -251,7 +252,7 @@
     }
   }
 
-  @include abstracts.breakpoint(sm) {
+  @include abstracts.screen(sm) {
     padding: 0 20px;
     height: 44px;
   }

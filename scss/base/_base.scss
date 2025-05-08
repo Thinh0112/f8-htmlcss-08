@@ -40,7 +40,7 @@ select {
 .icon {
   filter: var(--icon-color);
 
-  @include abstracts.breakpoint(sm) {
+  @include abstracts.screen(sm) {
     filter: var(--icon-mobile-color);
   }
 }

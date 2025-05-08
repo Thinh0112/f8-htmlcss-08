@@ -14,7 +14,7 @@ html.dark {
   --top-actions-group-bg-color: #292e39;
   --top-actions-group-box-shadow: rgba(0, 0, 0, 0.2);
 
-  @include abstracts.breakpoint(lg) {
+  @include abstracts.screen(lg) {
     --header-box-shadow-color: rgba(0, 0, 0, 0.2);
   }
 
