@@ -25,6 +25,7 @@ button {
   border: none;
   outline: none;
   background: transparent;
+  cursor: pointer;
 }
 
 a,
@@ -44,5 +45,12 @@ select {
 
   @include abstracts.screen(sm) {
     filter: var(--icon-mobile-color);
+  }
+}
+
+.container {
+  @include abstracts.screen(sm) {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 }

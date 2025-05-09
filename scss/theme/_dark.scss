@@ -35,9 +35,19 @@ html.dark {
   // Category
   --category-item-bg: #171c28;
   --category-item-thumb-bg: #292e39;
-  // --category-item-title-color: #000;
 
   @include abstracts.screen(md) {
     --category-item-bg: #171c28;
   }
+
+  // Filter Button
+  --filter-btn-bg: #171c28;
+  --filter-color: #fff;
+
+  // Like Button
+  --like-btn-bg: #292e39;
+
+  // Product Card
+  --product-card-bg: #171c28;
+  --product-card-shadow: rgba(0, 0, 0, 0.2);
 }
