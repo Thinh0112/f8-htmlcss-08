@@ -135,14 +135,148 @@
       <section class="home__container">
         <div class="home__row">
           <h2 class="home__heading">Total LavAzza 1320</h2>
-          <button class="filter-btn">
-            Filter
-            <img
-              src="./assets/icons/filter.svg"
-              alt=""
-              class="filter-btn__icon icon"
-            />
-          </button>
+          <div class="filter-wrap">
+            <button class="filter-btn js-toggle" toggle-target="#home-filter">
+              Filter
+              <img
+                src="./assets/icons/filter.svg"
+                alt=""
+                class="filter-btn__icon icon"
+              />
+            </button>
+
+            <div id="home-filter" class="filter hide">
+              <img
+                src="./assets/icons/arrow-up.png"
+                alt=""
+                class="filter__arrow-up icon"
+              />
+              <h3 class="filter__heading">Filter</h3>
+              <form action="" class="filter__form">
+                <div class="filter__row filter__content">
+                  <!-- Filter column 1 -->
+                  <div class="filter__col">
+                    <label for="" class="filter__form-label">Price</label>
+                    <div class="filter__form-group">
+                      <div
+                        class="filter__form-slider"
+                        style="--min-value: 10%; --max-value: 60%"
+                      ></div>
+                    </div>
+                    <div class="filter__form-group filter__form-group--inline">
+                      <div>
+                        <label
+                          for=""
+                          class="filter__form-label filter__form-label--small"
+                          >Minimum</label
+                        >
+                        <input
+                          type="tel"
+                          name=""
+                          id=""
+                          value="$30.00"
+                          class="filter__form-input filter__form-input--small"
+                        />
+                      </div>
+                      <div>
+                        <label
+                          for=""
+                          class="filter__form-label filter__form-label--small"
+                          >Maximum</label
+                        >
+                        <input
+                          type="tel"
+                          name=""
+                          id=""
+                          value="$100.00"
+                          class="filter__form-input filter__form-input--small"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="filter__separate"></div>
+
+                  <!-- Filter column 2 -->
+                  <div class="filter__col">
+                    <label for="" class="filter__form-label">Size/Weight</label>
+                    <div class="filter__form-group filter__form-group-row">
+                      <div class="filter__form-select-wrap">
+                        <div class="filter__form-select" style="--width: 157px">
+                          500g
+                          <img
+                            src="./assets/icons/select-arrow-down.svg"
+                            alt=""
+                            class="filter__form-select-arrow-down icon"
+                          />
+                        </div>
+                        <div class="filter__form-select">
+                          Gram
+                          <img
+                            src="./assets/icons/select-arrow-down.svg"
+                            alt=""
+                            class="filter__form-select-arrow-down icon"
+                          />
+                        </div>
+                      </div>
+                      <div class="filter__form-group filter__form-group-row">
+                        <div class="filter__form-tags">
+                          <button class="filter__form-tag">Small</button>
+                          <button class="filter__form-tag">Medium</button>
+                          <button class="filter__form-tag">Large</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="filter__separate"></div>
+
+                  <!-- Filter column 3 -->
+                  <div class="filter__col">
+                    <label for="" class="filter__form-label">Brand</label>
+                    <div class="filter__form-group filter__form-group-row">
+                      <div class="filter__form-text-input">
+                        <input
+                          type="tel"
+                          name=""
+                          id=""
+                          placeholder="Search brand name"
+                          class="filter__form-input"
+                        />
+                        <img
+                          src="./assets/icons/search.svg"
+                          alt=""
+                          class="filter__form-input-icon icon"
+                        />
+                      </div>
+                    </div>
+                    <div class="filter__form-group filter__form-group-row">
+                      <div class="filter__form-tags">
+                        <button class="filter__form-tag">Lavazza</button>
+                        <button class="filter__form-tag">Nescafe</button>
+                        <button class="filter__form-tag">Starbucks</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="filter__row filter__footer">
+                  <button
+                    class="btn btn--text filter__cancel js-toggle"
+                    toggle-target="#home-filter"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    class="btn btn--primary filter__submit js-toggle"
+                    toggle-target="#home-filter"
+                  >
+                    Show Result
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
 
         <div class="row row-cols-4 row-cols-lg-2 row-cols-sm-1 gx-sm-4">
