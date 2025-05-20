@@ -2108,6 +2108,11 @@ input {
   justify-content: space-between;
   align-items: center;
 }
+@media screen and (max-width: 767.98px) {
+  .form__text-input {
+    height: 48px;
+  }
+}
 .form__text-input:focus-within {
   border-color: #77dae6;
 }
@@ -2183,9 +2188,15 @@ input {
     line-height: 142.857%;
   }
 }
+.form__checkbox:has(:not(:checked))::after {
+  content: none;
+}
 .form__checkbox:has(:checked)::before {
   background: #ffb700;
   border-color: #ffb700;
+}
+.form__checkbox:has(:checked)::after {
+  content: "";
 }
 .form__pull-right {
   margin-left: auto;
@@ -2510,6 +2521,12 @@ input {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: var(--auth-intro-bg);
+}
+@media screen and (max-width: 767.98px) {
+  .auth__intro {
+    background: var(--auth-intro-bg);
+  }
 }
 .auth__intro-logo, .auth__intro-next {
   position: absolute;
@@ -2525,7 +2542,7 @@ input {
 .auth__intro-text {
   margin-top: 49px;
   width: 412px;
-  color: #1a162e;
+  color: var(--auth-intro-text-color);
   text-align: center;
   font-size: 18px;
   font-weight: 500;
@@ -2536,6 +2553,7 @@ input {
     width: 315px;
     font-size: 1.5rem;
     line-height: 146.667%;
+    padding: 0 8px;
   }
 }
 .auth__intro-next {
@@ -2550,11 +2568,12 @@ input {
     z-index: 1;
     inset: 0;
     overflow-y: auto;
-    translate: 100%;
-    transition: translate 0.3s;
-  }
-  .auth__content.show {
     translate: 0;
+    transition: translate 0.3s;
+    padding: 80px 30px 50px !important;
+  }
+  .auth__content.hide {
+    translate: 100%;
   }
 }
 .auth__content-inner {
@@ -2571,12 +2590,12 @@ input {
 }
 .auth__heading {
   margin-top: 50px;
-  color: #1a162e;
+  color: var(--auth-heading-color);
   font-size: 3rem;
   font-weight: 500;
   line-height: 146.667%;
 }
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: 767.98px) {
   .auth__heading {
     font-size: 2.2rem;
     line-height: 145.455%;
@@ -2584,14 +2603,14 @@ input {
 }
 .auth__desc {
   margin-top: 10px;
-  padding: 0 30px;
+  padding: 0 24px;
   width: 460px;
   color: #9e9da8;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 146.667%;
 }
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: 767.98px) {
   .auth__desc {
     width: 315px;
     padding: 0 24px;
@@ -2603,7 +2622,7 @@ input {
   margin-top: 30px;
   width: 100%;
 }
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: 767.98px) {
   .auth__form {
     margin-top: 10px;
   }
@@ -2614,7 +2633,7 @@ input {
   font-weight: 500;
   line-height: 146.667%;
 }
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: 767.98px) {
   .auth__link {
     font-size: 1.4rem;
     line-height: 142.857%;
@@ -2624,7 +2643,7 @@ input {
   font-size: 1.8rem;
   line-height: 144.444%;
 }
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: 767.98px) {
   .auth__link--big {
     font-size: 1.6rem;
     line-height: 150%;
@@ -2639,6 +2658,9 @@ input {
 .auth__btn {
   border-radius: 10px;
 }
+.auth__btn-text {
+  color: var(--auth-btn-color);
+}
 .auth__text {
   margin-top: 108px;
   color: #9e9da8;
@@ -2648,8 +2670,9 @@ input {
   align-items: center;
   gap: 10px;
 }
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: 767.98px) {
   .auth__text {
+    margin-top: 56px;
     font-size: 1.6rem;
     line-height: 150%;
   }
@@ -2680,6 +2703,8 @@ html {
   --filter-form-shadow: rgba(200, 200, 200, 0.4);
   --filter-tag-bg: #f8f8fb;
   --auth-content-bg: #fff;
+  --auth-intro-text-color: #1a162e;
+  --auth-heading-color: #1a162e;
 }
 @media screen and (max-width: 991.98px) {
   html {
@@ -2690,6 +2715,11 @@ html {
 @media screen and (max-width: 767.98px) {
   html {
     --category-item-bg: #fff;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  html {
+    --auth-intro-bg: #fff;
   }
 }
 
@@ -2725,6 +2755,11 @@ html.dark {
   --filter-tag-bg: #171c28;
   --filter-form-arrow: brightness(0) saturate(100%) invert(16%) sepia(13%)
     saturate(843%) hue-rotate(183deg) brightness(93%) contrast(93%);
+  --auth-content-bg: #292e39;
+  --auth-intro-bg: #171c28;
+  --auth-heading-color: #b9babe;
+  --auth-btn-color: #b9babe;
+  --auth-intro-text-color: #b9babe;
 }
 @media screen and (max-width: 991.98px) {
   html.dark {

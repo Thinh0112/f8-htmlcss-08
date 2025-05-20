@@ -45,6 +45,10 @@
     justify-content: space-between;
     align-items: center;
 
+    @include abstracts.screen(md) {
+      height: 48px;
+    }
+
     &:focus-within {
       border-color: #77dae6;
     }
@@ -132,10 +136,19 @@
     }
   }
 
+  &__checkbox:has(:not(:checked)) {
+    &::after {
+      content: none;
+    }
+  }
+
   &__checkbox:has(:checked) {
     &::before {
       background: #ffb700;
       border-color: #ffb700;
+    }
+    &::after {
+      content: "";
     }
   }
 

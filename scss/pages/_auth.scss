@@ -15,6 +15,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: var(--auth-intro-bg);
+
+    @include abstracts.screen(md) {
+      background: var(--auth-intro-bg);
+    }
 
     &-logo,
     &-next {
@@ -34,7 +39,7 @@
     &-text {
       margin-top: 49px;
       width: 412px;
-      color: #1a162e;
+      color: var(--auth-intro-text-color);
       text-align: center;
       font-size: 18px;
       font-weight: 500;
@@ -44,6 +49,7 @@
         width: 315px;
         font-size: 1.5rem;
         line-height: 146.667%;
+        padding: 0 8px;
       }
     }
 
@@ -56,16 +62,17 @@
     background: var(--auth-content-bg);
 
     @include abstracts.screen(md) {
+      &.hide {
+        translate: 100%;
+      }
+
       position: fixed;
       z-index: 1;
       inset: 0;
       overflow-y: auto;
-      translate: 100%;
+      translate: 0;
       transition: translate 0.3s;
-
-      &.show {
-        translate: 0;
-      }
+      padding: 80px 30px 50px !important;
     }
 
     &-inner {
@@ -87,12 +94,12 @@
 
   &__heading {
     margin-top: 50px;
-    color: #1a162e;
+    color: var(--auth-heading-color);
     font-size: 3rem;
     font-weight: 500;
     line-height: 146.667%;
 
-    @include abstracts.screen(sm) {
+    @include abstracts.screen(md) {
       font-size: 2.2rem;
       line-height: 145.455%;
     }
@@ -100,14 +107,14 @@
 
   &__desc {
     margin-top: 10px;
-    padding: 0 30px;
+    padding: 0 24px;
     width: 460px;
     color: #9e9da8;
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 146.667%;
 
-    @include abstracts.screen(sm) {
+    @include abstracts.screen(md) {
       width: 315px;
       padding: 0 24px;
       font-size: 1.4rem;
@@ -119,7 +126,7 @@
     margin-top: 30px;
     width: 100%;
 
-    @include abstracts.screen(sm) {
+    @include abstracts.screen(md) {
       margin-top: 10px;
     }
   }
@@ -130,7 +137,7 @@
     font-weight: 500;
     line-height: 146.667%;
 
-    @include abstracts.screen(sm) {
+    @include abstracts.screen(md) {
       font-size: 1.4rem;
       line-height: 142.857%;
     }
@@ -139,7 +146,7 @@
       font-size: 1.8rem;
       line-height: 144.444%;
 
-      @include abstracts.screen(sm) {
+      @include abstracts.screen(md) {
         font-size: 1.6rem;
         line-height: 150%;
       }
@@ -156,6 +163,10 @@
 
   &__btn {
     border-radius: 10px;
+
+    &-text {
+      color: var(--auth-btn-color);
+    }
   }
 
   &__text {
@@ -168,7 +179,8 @@
     align-items: center;
     gap: 10px;
 
-    @include abstracts.screen(sm) {
+    @include abstracts.screen(md) {
+      margin-top: 56px;
       font-size: 1.6rem;
       line-height: 150%;
     }
