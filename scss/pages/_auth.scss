@@ -1,0 +1,176 @@
+@use "../abstracts";
+
+.auth {
+  display: flex;
+  min-height: 100vh;
+
+  @supports (-webkit-touch-callout: none) {
+    min-height: -webkit-fill-available;
+  }
+
+  &__intro {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &-logo,
+    &-next {
+      position: absolute;
+      left: 50%;
+      translate: -50%;
+    }
+
+    &-logo {
+      top: 80px;
+    }
+
+    &-img {
+      max-width: 100%;
+    }
+
+    &-text {
+      margin-top: 49px;
+      width: 412px;
+      color: #1a162e;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 144.444%;
+
+      @include abstracts.screen(md) {
+        width: 315px;
+        font-size: 1.5rem;
+        line-height: 146.667%;
+      }
+    }
+
+    &-next {
+      bottom: 50px;
+    }
+  }
+
+  &__content {
+    background: var(--auth-content-bg);
+
+    @include abstracts.screen(md) {
+      position: fixed;
+      z-index: 1;
+      inset: 0;
+      overflow-y: auto;
+      translate: 100%;
+      transition: translate 0.3s;
+
+      &.show {
+        translate: 0;
+      }
+    }
+
+    &-inner {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      text-align: center;
+      width: min(460px, 100%);
+      margin: 0 auto;
+    }
+  }
+
+  &__intro,
+  &__content {
+    flex: 1;
+    padding: 50px 30px 52px;
+  }
+
+  &__heading {
+    margin-top: 50px;
+    color: #1a162e;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 146.667%;
+
+    @include abstracts.screen(sm) {
+      font-size: 2.2rem;
+      line-height: 145.455%;
+    }
+  }
+
+  &__desc {
+    margin-top: 10px;
+    padding: 0 30px;
+    width: 460px;
+    color: #9e9da8;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 146.667%;
+
+    @include abstracts.screen(sm) {
+      width: 315px;
+      padding: 0 24px;
+      font-size: 1.4rem;
+      line-height: 142.857%;
+    }
+  }
+
+  &__form {
+    margin-top: 30px;
+    width: 100%;
+
+    @include abstracts.screen(sm) {
+      margin-top: 10px;
+    }
+  }
+
+  &__link {
+    color: #0071dc;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 146.667%;
+
+    @include abstracts.screen(sm) {
+      font-size: 1.4rem;
+      line-height: 142.857%;
+    }
+
+    &--big {
+      font-size: 1.8rem;
+      line-height: 144.444%;
+
+      @include abstracts.screen(sm) {
+        font-size: 1.6rem;
+        line-height: 150%;
+      }
+    }
+  }
+
+  &__btn-group {
+    margin-top: 50px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__btn {
+    border-radius: 10px;
+  }
+
+  &__text {
+    margin-top: 108px;
+    color: #9e9da8;
+    font-size: 1.8rem;
+    line-height: 144.444%;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include abstracts.screen(sm) {
+      font-size: 1.6rem;
+      line-height: 150%;
+    }
+  }
+}
