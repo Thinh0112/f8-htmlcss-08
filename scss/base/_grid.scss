@@ -48,6 +48,8 @@ $grid-gutter-width: 30px;
 }
 
 .row {
+  --grid-gutter-y: 0;
+
   display: flex;
   flex-wrap: wrap;
   margin-top: calc(var(--grid-gutter-y) * -1);
